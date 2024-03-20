@@ -6,6 +6,8 @@ doSomething = function () {
 Usage: 
 toDec32("45.7675", 5);
 
+Rounding mode can be "truncate", "round-down", "round-up", or "nearest"
+
 Returns
 {
     error: false,
@@ -17,7 +19,7 @@ Returns
     }
 }
 */
-function toDec32(fixedPointString, exponent) {
+function toDec32(fixedPointString, exponent, roundingMode = "nearest") {
     // Handle NaN case
     if (fixedPointString.toLowerCase() === "nan") {
         return {
@@ -81,9 +83,24 @@ function toDec32(fixedPointString, exponent) {
         whole = parseInt(fixedPointString.slice(0, 7));
         frac = parseFloat("0." + fixedPointString.slice(7));
 
-        // if tied, round up if `whole` is odd, i.e. it will become even after rounding up
-        if (frac > 0.5 || (frac === 0.5 && whole % 2 == 1)) {
-            whole++;
+        switch (roundingMode) {
+            // case "truncate": do nothing
+            case "round-down":
+                if (signBit === "1") {
+                    whole++;
+                }
+                break;
+            case "round-up":
+                if (signBit === "0") {
+                    whole++;
+                }
+                break;
+            case "nearest":
+                // if tied, round up if `whole` is odd, i.e. it will become even after rounding up
+                if (frac > 0.5 || (frac === 0.5 && whole % 2 == 1)) {
+                    whole++;
+                }
+                break;
         }
 
         digits = whole.toString();
