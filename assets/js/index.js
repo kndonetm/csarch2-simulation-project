@@ -1,7 +1,3 @@
-doSomething = function () {
-    console.log("Did something!");
-};
-
 /*
 Usage: 
 toDec32("45.7675", 5);
