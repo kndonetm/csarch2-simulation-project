@@ -30,8 +30,41 @@ document.addEventListener('DOMContentLoaded', function() {
   clearFloatBtn.addEventListener('click', function() {
       // Clear input fields
       document.getElementById('binary-box').value = '';
-      
+
       // Clear output fields
       document.querySelector('#floatingPoint .decimal-box').innerText = '';
+  });
+
+  // Add space after every 4 binary digits
+  const binaryInput = document.getElementById('binary-box');
+  binaryInput.addEventListener('input', function() {
+      let binaryValue = this.value.replace(/\s/g, ''); // Remove existing spaces
+      binaryValue = binaryValue.replace(/(.{4})/g, '$1 '); // Insert space after every 4 characters
+      this.value = binaryValue.trim(); // Update input field value
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const binaryInput = document.getElementById('binary-box');
+  const convertBtn = document.getElementById('convert-float-btn');
+  const errorMessage = document.getElementById('binary-error-message');
+
+  binaryInput.addEventListener('input', function() {
+      let binaryValue = this.value.replace(/\s/g, ''); // Remove existing spaces
+      binaryValue = binaryValue.replace(/(.{4})/g, '$1 '); // Insert space after every 4 characters
+
+      // Check for invalid characters and display error message
+      const invalidCharacters = binaryValue.replace(/[01\s]/g, '');
+      if (invalidCharacters.length > 0) {
+          errorMessage.innerText = 'You can only input 0 and 1 for binary';
+          this.classList.add('invalid-input');
+          convertBtn.disabled = true; // Disable the convert button
+      } else {
+          errorMessage.innerText = '';
+          this.classList.remove('invalid-input');
+          convertBtn.disabled = false; // Enable the convert button
+      }
+
+      this.value = binaryValue.trim(); // Update input field value
   });
 });

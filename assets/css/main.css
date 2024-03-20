@@ -107,6 +107,7 @@ body {
     margin-right: 1rem;
     width: 10vw;
     float: left;
+    margin-top: 1rem;
 }
 
 #clear-decimal-btn,
@@ -115,6 +116,7 @@ body {
     font-size: 1.4em;
     width: 10vw;
     float: left;
+    margin-top: 1rem;
 }
 
 #input-label {
@@ -184,4 +186,11 @@ body {
     font-size: 20px;
     margin-left: 1rem;
     margin-top: 7rem;
+}
+
+#binary-error-message {
+    color: red;
+    font-size: 14px;
+    margin-left: 1.1rem;
+    margin-top: -1rem;
 }
