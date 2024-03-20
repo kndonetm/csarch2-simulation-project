@@ -1,4 +1,156 @@
-h1 {
-    color: blue;
-    text-align: center;   
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Luckiest+Guy&display=swap');
+
+:root {
+    --header-color: #211951;
+    --tab-color: #836FFF;
+    --button-color: #15F5BA;
+    --background-color: #F0F3FF;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    background-color: var(--header-color);
+    font-family: "Luckiest Guy", sans-serif;
+    color: white;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Tab */
+#conversionTab {
+    background-color: #E5EEED;
+}
+
+.nav-tabs > li > a.active {
+    background-color: var(--tab-color) !important;
+    color: #ffffff !important;
+}
+  
+.nav-tabs > li > a:hover {
+    color: black !important;
+}
+  
+.nav-link {
+    color: black;
+}
+
+#conversionTabContent {
+    display: flex;
+    justify-content: center;
+}
+
+/* Decimal 32*/
+
+/* Main container */
+#decimal32 {
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+}
+
+/* Input Container */
+.input-container1 {
+    flex: 1;
+    padding: 20px;
+}
+
+.input-content1,
+.input-content2 {
+    display: flex;
+    justify-content: left;
+}
+
+.input-content1 p  {
+    font-family: "Amaranth", sans-serif;
+    font-size: 30px;
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+.dropdown {
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+.input-content2 {
+    margin-left: 1rem;
+    padding-top: 1rem;
+}
+
+.input-content2 p {
+    font-family: "Amaranth", sans-serif;
+    font-size: 30px;
+    margin-top: 0.2rem;
+}
+
+#decimal-box {
+    margin-right: 1rem;
+    height: 8vh;
+    width: 25vw;
+}
+
+#exponent-box {
+    margin-left: 1rem;
+    height: 8vh;
+    width: 12vw;
+}
+
+.input-button-container {
+    margin-left: 1rem;
+    padding-top: 2rem;
+}
+
+#convert-btn {
+    font-family: "Amaranth", sans-serif;
+    font-size: 1.4em;
+    margin-right: 1rem;
+    width: 10vw;
+    float: left;
+}
+
+#clear-btn {
+    font-family: "Amaranth", sans-serif;
+    font-size: 1.4em;
+    width: 10vw;
+    float: left;
+}
+
+/* Output Container */
+.output-container1 {
+    flex: 1;
+    padding: 20px;
+}
+
+.output-content1 p {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+    margin-left: 1rem;
+    margin-top: 3rem;
+}
+
+.binary-box,
+.hexadecimal-box {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #eadcce;
+    width: auto;
+    width: 45vw;
+    height: 8vh;
+    margin-left: 1rem;
+}
+
+#export-btn {
+    font-family: "Amaranth", sans-serif;
+    font-size: 1.2em;
+    width: 15vw;
+    margin-top: 3rem;
+    float: right;
+    margin-right: 1rem;
 }
