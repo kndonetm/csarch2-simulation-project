@@ -68,3 +68,53 @@ document.addEventListener('DOMContentLoaded', function() {
       this.value = binaryValue.trim(); // Update input field value
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const decimalInput = document.getElementById('decimal-box');
+  const exponentInput = document.getElementById('exponent-box');
+  const convertBtn = document.getElementById('convert-decimal-btn');
+
+  decimalInput.addEventListener('input', validateDecimalInput);
+  exponentInput.addEventListener('input', validateExponentInput);
+
+  function validateDecimalInput() {
+      const decimalValue = decimalInput.value.trim();
+
+      // Check if decimal input is a valid number
+      const isValidDecimal = /^\d+(\.\d*)?$/.test(decimalValue);
+      if (!isValidDecimal) {
+          decimalInput.classList.add('invalid-input');
+      } else {
+          decimalInput.classList.remove('invalid-input');
+      }
+
+      validateAllInputs(); // Validate all inputs
+  }
+
+  function validateExponentInput() {
+      const exponentValue = exponentInput.value.trim();
+
+      // Check if exponent input is a valid number
+      const isValidExponent = /^\d+$/.test(exponentValue);
+      if (!isValidExponent) {
+          exponentInput.classList.add('invalid-input');
+      } else {
+          exponentInput.classList.remove('invalid-input');
+      }
+
+      validateAllInputs(); // Validate all inputs
+  }
+
+  function validateAllInputs() {
+      // Check if both decimal and exponent inputs are valid
+      const isDecimalValid = !decimalInput.classList.contains('invalid-input');
+      const isExponentValid = !exponentInput.classList.contains('invalid-input');
+
+      // Disable or enable the convert button based on input validity
+      if (isDecimalValid && isExponentValid) {
+          convertBtn.disabled = false; // Enable the convert button
+      } else {
+          convertBtn.disabled = true; // Disable the convert button
+      }
+  }
+});
