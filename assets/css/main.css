@@ -40,18 +40,12 @@ body {
     color: black;
 }
 
-#conversionTabContent {
-    display: flex;
-    justify-content: center;
-}
-
 /* Decimal 32*/
-
-/* Main container */
-#decimal32 {
-   display: flex;
-   width: 100vw;
-   height: 100vh;
+/* Outer Container */
+.input-outer-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
 }
 
 /* Input Container */
@@ -135,7 +129,8 @@ body {
 }
 
 .binary-box,
-.hexadecimal-box {
+.hexadecimal-box,
+.decimal-box {
     display: inline-block;
     padding: 10px;
     border: 1px solid #ccc;
@@ -153,4 +148,25 @@ body {
     margin-top: 3rem;
     float: right;
     margin-right: 1rem;
+}
+
+/* Floating Point */
+#binary-box {
+    margin-top: 9.85rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 8vh;
+    width: 40vw;
+}
+
+.float-input-button-container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.float-output-content1 p {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+    margin-left: 1rem;
+    margin-top: 7rem;
 }

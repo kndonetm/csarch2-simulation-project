@@ -24,61 +24,84 @@
         <!-- Conversion Tabs -->
         <ul class="nav nav-tabs" id="conversionTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="decimal32-tab" data-toggle="tab" href="#decimal32" role="tab" aria-controls="decimal32" aria-selected="true"> Decimal-32 to Floating Point </a>
+              <a class="nav-link active" id="decimal32-tab" data-toggle="tab" href="#decimal32" role="tab" aria-controls="decimal" aria-selected="true"> Decimal-32 to Floating Point </a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" id="floatingPoint-tab" data-toggle="tab" href="#floatingPoint" role="tab" aria-controls="floatingPoint" aria-selected="false"> Floating Point to Decimal 32 </a>
+              <a class="nav-link" id="floatingPoint-tab" data-toggle="tab" href="#floatingPoint" role="tab" aria-controls="floating" aria-selected="false"> Floating Point to Decimal 32 </a>
             </li>
-          </ul>
+        </ul>
 
-          <div class="tab-content" id="conversionTabContent">
+        <div class="tab-content" id="conversionTabContent">
             <!-- Decimal 32 -->
-            <div class="tab-pane fade show active" id="decimal32" role="tabpanel" aria-labelledby="decimal32">
-                <div class="input-container1">
-                    <div class="input-content1"> 
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Truncate
-                            </button>
-    
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button"> Round up </button>
-                                <button class="dropdown-item" type="button"> Round down </button>
-                                <button class="dropdown-item" type="button"> Round to Nearest Ties Even</button>
+            <div class="tab-pane fade show active" id="decimal32" role="tabpanel" aria-labelledby="decimal32-tab">
+                <div class="input-outer-container">
+                    <div class="input-container1">
+                        <div class="input-content1"> 
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Truncate
+                                </button>
+        
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button"> Round up </button>
+                                    <button class="dropdown-item" type="button"> Round down </button>
+                                    <button class="dropdown-item" type="button"> Round to Nearest Ties Even</button>
+                                </div>
                             </div>
                         </div>
+    
+                        <div class="input-content2">
+                            <input type="text" id="decimal-box" name="decimal-input" placeholder="Enter decimal value"><br><br>
+                            <p> x 10^ </p>
+                            <input type="text" id="exponent-box" name="exponent-input" placeholder="Enter exponent value"><br><br>
+                        </div>
+    
+                        <div class="input-button-container">
+                            <button id="convert-btn"> CONVERT </button>
+                            <button id="clear-btn"> CLEAR </button>
+                        </div>
                     </div>
-
-                    <div class="input-content2">
-                        <input type="text" id="decimal-box" name="decimal-input" placeholder="Enter decimal value"><br><br>
-                        <p> x 10^ </p>
-                        <input type="text" id="exponent-box" name="exponent-input" placeholder="Enter exponent value"><br><br>
-                    </div>
-
-                    <div class="input-button-container">
-                        <button id="convert-btn"> CONVERT </button>
-                        <button id="clear-btn"> CLEAR </button>
-                    </div>
-                </div>
-
-                <div class="output-container1">
-                    <div class="output-content1">
-                        <p> Binary Output </p>
-                        <div class="binary-box"> </div>
-
-                        <p> Hexadecimal Output</p>
-                        <div class="hexadecimal-box"> </div>
-
-                        <button id="export-btn"> EXPORT TO TEXT FILE </button>
+    
+                    <div class="output-container1">
+                        <div class="output-content1">
+                            <p> Binary Output </p>
+                            <div class="binary-box"> </div>
+    
+                            <p> Hexadecimal Output</p>
+                            <div class="hexadecimal-box"> </div>
+    
+                            <button id="export-btn"> EXPORT TO TEXT FILE </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Floating Point -->
-            <div class="tab-pane fade" id="floatingPoint" role="tabpanel" aria-labelledby="floatingPoint">
-                WORLD
+            <div class="tab-pane fade" id="floatingPoint" role="tabpanel" aria-labelledby="floatingPoint-tab">
+                <div class="input-outer-container">
+                    <div class="input-container1">    
+                        <div class="float-input-content1">
+                            <input type="text" id="binary-box" name="binary-input" placeholder="Enter binary input"><br><br>
+                        </div>
+    
+                        <div class="float-input-button-container">
+                            <button id="convert-btn"> CONVERT </button>
+                            <button id="clear-btn"> CLEAR </button>
+                        </div>
+                    </div>
+    
+                    <div class="output-container1">
+                        <div class="float-output-content1">
+                            <p> Decimal Output </p>
+                            <div class="decimal-box"> </div>
+
+                            <button id="export-btn"> EXPORT TO TEXT FILE </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
 
         <!-- JavaScript -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
