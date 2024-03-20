@@ -67,7 +67,7 @@ body {
     margin-left: 1rem;
 }
 
-.dropdown {
+.dropdown-container {
     margin-top: 7rem;
     margin-left: 1rem;
 }
@@ -100,7 +100,8 @@ body {
     padding-top: 2rem;
 }
 
-#convert-btn {
+#convert-decimal-btn,
+#convert-float-btn {
     font-family: "Amaranth", sans-serif;
     font-size: 1.4em;
     margin-right: 1rem;
@@ -108,11 +109,24 @@ body {
     float: left;
 }
 
-#clear-btn {
+#clear-decimal-btn,
+#clear-float-btn {
     font-family: "Amaranth", sans-serif;
     font-size: 1.4em;
     width: 10vw;
     float: left;
+}
+
+#input-label {
+    font-family: "Amaranth", sans-serif;
+    margin-left: 1rem;
+    font-size: 1.5em;
+    margin-top: 1rem;
+}
+
+#dropdown-title {
+    font-family: "Amaranth", sans-serif;
+    font-size: 1.2em;
 }
 
 /* Output Container */
@@ -141,7 +155,8 @@ body {
     margin-left: 1rem;
 }
 
-#export-btn {
+#export-decimal-btn,
+#export-float-btn {
     font-family: "Amaranth", sans-serif;
     font-size: 1.2em;
     width: 15vw;

@@ -38,19 +38,19 @@
                 <div class="input-outer-container">
                     <div class="input-container1">
                         <div class="input-content1"> 
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Truncate
-                                </button>
-        
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button class="dropdown-item" type="button"> Round up </button>
-                                    <button class="dropdown-item" type="button"> Round down </button>
-                                    <button class="dropdown-item" type="button"> Round to Nearest Ties Even</button>
-                                </div>
+                            <div class="dropdown-container">
+                                <label id="dropdown-title" for="dropdown"> Rounding Method: </label>
+                                <select id="dropdown" disabled>
+                                    <option value="option1"> Truncate </option>
+                                    <option value="option2"> Round Up </option>
+                                    <option value="option3"> Round Down </option>
+                                    <option value="option3"> Round to Nearest Ties Even </option>
+                                </select>
                             </div>
                         </div>
     
+                        <label id="input-label" for="numberInput">Enter a decimal number:</label>
+                        
                         <div class="input-content2">
                             <input type="text" id="decimal-box" name="decimal-input" placeholder="Enter decimal value"><br><br>
                             <p> x 10^ </p>
@@ -58,8 +58,8 @@
                         </div>
     
                         <div class="input-button-container">
-                            <button id="convert-btn"> CONVERT </button>
-                            <button id="clear-btn"> CLEAR </button>
+                            <button id="convert-decimal-btn"> CONVERT </button>
+                            <button id="clear-decimal-btn" onclick=""> CLEAR </button>
                         </div>
                     </div>
     
@@ -71,7 +71,7 @@
                             <p> Hexadecimal Output</p>
                             <div class="hexadecimal-box"> </div>
     
-                            <button id="export-btn"> EXPORT TO TEXT FILE </button>
+                            <button id="export-decimal-btn"> EXPORT TO TEXT FILE </button>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                         </div>
     
                         <div class="float-input-button-container">
-                            <button id="convert-btn"> CONVERT </button>
-                            <button id="clear-btn"> CLEAR </button>
+                            <button id="convert-float-btn"> CONVERT </button>
+                            <button id="clear-float-btn"> CLEAR </button>
                         </div>
                     </div>
     
@@ -96,7 +96,7 @@
                             <p> Decimal Output </p>
                             <div class="decimal-box"> </div>
 
-                            <button id="export-btn"> EXPORT TO TEXT FILE </button>
+                            <button id="export-float-btn"> EXPORT TO TEXT FILE </button>
                         </div>
                     </div>
                 </div>
@@ -104,6 +104,7 @@
         </div>
 
         <!-- JavaScript -->
+        <script src="assets/js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
