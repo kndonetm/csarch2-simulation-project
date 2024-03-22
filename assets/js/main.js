@@ -119,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+textFile = null;
+
 document.getElementById("convert-decimal-btn").addEventListener("click", function () {
     const roundingMode = document.getElementById("dropdown").value;
     const fixedPointString = document.getElementById("decimal-box").value;
@@ -138,10 +140,27 @@ document.getElementById("convert-decimal-btn").addEventListener("click", functio
         res.result.coefficientContinuationField[1],
     ];
 
-    document.getElementById("binary-output").innerHTML = fields.join(" ");
+    const binOutput = fields.join(" ");
+    document.getElementById("binary-output").innerHTML = binOutput;
 
     const hexOutput = parseInt(fields.join(""), 2).toString(16);
     document.getElementById("hexadecimal-output").innerHTML = hexOutput;
+
+    textOutput = `Conversion results for ${fixedPointString} x 10^${exponent} to decimal32\nBinary output: ${binOutput}\nHexadecimal output: ${hexOutput}`;
+
+    document.getElementById("export-decimal-btn").disabled = false;
+
+    const data = new Blob([textOutput], { type: "text/plain" });
+
+    if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    const link = document.getElementById("export-download-link");
+    link.setAttribute("download", "results.txt");
+    link.href = textFile;
 });
 
 /*

@@ -58,7 +58,7 @@
                         </div>
     
                         <div class="input-button-container">
-                            <button id="convert-decimal-btn"> CONVERT </button>
+                            <button id="convert-decimal-btn" disabled> CONVERT </button>
                             <button id="clear-decimal-btn" onclick=""> CLEAR </button>
                         </div>
                     </div>
@@ -71,7 +71,9 @@
                             <p> Hexadecimal Output</p>
                             <div id="hexadecimal-output" class="hexadecimal-box"> </div>
     
-                            <button id="export-decimal-btn"> EXPORT TO TEXT FILE </button>
+                            <button id="export-decimal-btn" disabled> 
+                                <a id="export-download-link"> EXPORT TO TEXT FILE </a> 
+                            </button>
                         </div>
                     </div>
                 </div>
