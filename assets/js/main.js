@@ -1,4 +1,4 @@
-/* Function: Enables the dropdown menu if user inputs more than 7 digits in the decimal value */
+/* enables the dropdown menu if user inputs more than 7 digits in the decimal value */
 document.addEventListener("DOMContentLoaded", function () {
     const numberInput = document.getElementById("decimal-box");
     const dropdown = document.getElementById("dropdown");
@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-/* Function: Handles the clear button and adding of spaces every 4 binary digits */
+/* handles the clear button and adding of spaces every 4 binary digits */
 document.addEventListener("DOMContentLoaded", function () {
-    // Clear button for Decimal 32 tab
+    // clear button for Decimal 32 tab
     const clearDecimalBtn = document.getElementById("clear-decimal-btn");
     clearDecimalBtn.addEventListener("click", function () {
-        // Clear input fields
+        // clear input fields
         document.getElementById("decimal-box").value = "";
         document.getElementById("exponent-box").value = "";
 
-        // Clear output fields
+        // clear output fields
         document.querySelector("#decimal32 .binary-box").innerText = "";
         document.querySelector("#decimal32 .hexadecimal-box").innerText = "";
     });
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function validateDecimalInput() {
         const decimalValue = decimalInput.value.trim();
 
-        // Check if decimal input is a valid number
+        // check if decimal input is a valid number
         const isValidDecimal = isValidFixedPoint(decimalValue);
         if (!isValidDecimal) {
             decimalInput.classList.add("invalid-input");
@@ -46,13 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
             decimalInput.classList.remove("invalid-input");
         }
 
-        validateAllInputs(); // Validate all inputs
+        validateAllInputs();
     }
 
+    
+    // check if exponent input is a valid number
     function validateExponentInput() {
         const exponentValue = exponentInput.value.trim();
 
-        // Check if exponent input is a valid number
         const isValidExponent = /^[+-]?\d+$/.test(exponentValue);
         if (!isValidExponent) {
             exponentInput.classList.add("invalid-input");
@@ -60,19 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
             exponentInput.classList.remove("invalid-input");
         }
 
-        validateAllInputs(); // Validate all inputs
+        validateAllInputs();
     }
 
+    //check if both decimal and exponent inputs are valid
     function validateAllInputs() {
-        // Check if both decimal and exponent inputs are valid
+    
         const isDecimalValid = !decimalInput.classList.contains("invalid-input");
         const isExponentValid = !exponentInput.classList.contains("invalid-input");
-
-        // Disable or enable the convert button based on input validity
         if (isDecimalValid && isExponentValid) {
-            convertBtn.disabled = false; // Enable the convert button
+            convertBtn.disabled = false; // enable convert button
         } else {
-            convertBtn.disabled = true; // Disable the convert button
+            convertBtn.disabled = true; // disable convert button
         }
     }
 });
