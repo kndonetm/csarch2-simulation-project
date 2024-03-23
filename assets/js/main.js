@@ -266,8 +266,16 @@ function toDec32(fixedPointString, exponent, roundingMode = "nearest") {
         }
 
         digits = whole.toString();
+        // remove trailing zeros
+        num_trailing_zeros = digits.length - digits.replace(/0+$/g, "").length;
+        digits =
+            "0".repeat(num_trailing_zeros) + digits.slice(0, digits.length - num_trailing_zeros);
+        exponent += num_trailing_zeros;
+
         exponent += fixedPointString.length - 7;
     }
+
+    console.log(signBit, digits, exponent);
 
     // handle inf
     if (exponent > 90) {
