@@ -286,7 +286,10 @@ function toDec32(fixedPointString, exponent, roundingMode = "nearest") {
 }
 
 function isValidFixedPoint(fixedPointString) {
-    return /^\s*[+-]?(\d*\.)?\d+\s*$/g.test(fixedPointString);
+    return (
+        /^\s*[+-]?(\d*\.)?\d+\s*$/g.test(fixedPointString) ||
+        fixedPointString.toLowerCase() === "nan"
+    );
 }
 
 // Takes a 3 digit string, returns a string with its BCD equivalent (in bytes)
