@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/* Function: Handles the clear button and adding of spaces every 4 binary digits */
 document.addEventListener("DOMContentLoaded", function () {
     // Clear button for Decimal 32 tab
     const clearDecimalBtn = document.getElementById("clear-decimal-btn");
