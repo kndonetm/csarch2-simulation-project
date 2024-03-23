@@ -104,7 +104,11 @@ document.getElementById("convert-decimal-btn").addEventListener("click", functio
     const hexOutput = parseInt(fields.join(""), 2).toString(16);
     document.getElementById("hexadecimal-output").innerHTML = hexOutput;
 
-    textOutput = `Conversion results for ${fixedPointString} x 10^${exponent} to decimal32\nBinary output: ${binOutput}\nHexadecimal output: ${hexOutput}`;
+    if (fixedPointString === "nan") {
+        textOutput = `Conversion results for nan to decimal32\nBinary output: ${binOutput}\nHexadecimal output: ${hexOutput}`;
+    } else {
+        textOutput = `Conversion results for ${fixedPointString} x 10^${exponent} to decimal32\nBinary output: ${binOutput}\nHexadecimal output: ${hexOutput}`;
+    }
 
     document.getElementById("export-decimal-btn").disabled = false;
 
